@@ -80,7 +80,7 @@ done
 [[ -z $ZEPHYR_VERSION ]] && ZEPHYR_VERSION="3.5"
 [[ -z $RUNWITH_DOCKER ]] && RUNWITH_DOCKER="true"
 
-[[ -z $OUTPUT_DIR ]] && OUTPUT_DIR="$WINHOME/Downloads"
+[[ -z $OUTPUT_DIR ]] && OUTPUT_DIR="$HOME/code/personal/urob-zmk-config/results"
 [[ -z $LOG_DIR ]] && LOG_DIR="/tmp"
 
 [[ -z $HOST_ZMK_DIR ]] && HOST_ZMK_DIR="$HOME/code/personal/zmk"
