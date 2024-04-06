@@ -24,6 +24,7 @@
           buildInputs = [
             pkgs.git
             pkgs.podman
+            pkgs.yq
           ];
         };
 
