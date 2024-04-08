@@ -1,9 +1,5 @@
 /* source keypos definitions */
 #include "../zmk-nodefree-config/keypos_def/keypos_34keys.h"
 
-/* map Zen's extra keys */
-#define X_LH  &smart_mouse  // thumb row, left
-#define X_RH  &bs_del       // thumb row, right
-
 /* source the main keymap */
 #include "base.keymap"
