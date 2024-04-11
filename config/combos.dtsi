@@ -21,16 +21,16 @@
 // #define HRC_RPAR   &hmr_rpar_gt LA(LCTRL) 0
 
 // make homerow combos tap-only (so HRMs can be chorded instantaneously)
-#define HRC_LPAR        &lpar_rpar       LA(LCTRL) 0
-#define HRC_LBRACK      &lbrack_rbrack   RS(LCTRL) 0
-#define HRC_LCURL       &lcurl_rcurl     RS(LGUI) 0
-#define HRC_LT          &lt_gt           LA(RSHIFT) 0
+#define HRC_LPAR        &lpar_rpar       LGUI 0
+#define HRC_LBRACK      &lbrack_rbrack   LGUI 0
+#define HRC_LCURL       &lcurl_rcurl     LGUI 0
+#define HRC_LT          &lt_gt           LGUI 0
 #define HLC_ESC         &kp ESC          LS(LCTRL) 0
 
-ZMK_COMBO(lpar  ,   HRC_LPAR     ,       RM1 RM2,    DEF      , COMBO_TERM_FAST)
-ZMK_COMBO(lbrack,   HRC_LBRACK   ,       RM2 RM3,    DEF      , COMBO_TERM_FAST)
-ZMK_COMBO(lcurl ,   HRC_LCURL    ,       RM3 RM4,    DEF      , COMBO_TERM_FAST)
-ZMK_COMBO(lt    ,   HRC_LT       ,       RM1 RM3,    DEF      , COMBO_TERM_FAST)
+ZMK_COMBO(lpar  ,   &lpar_rpar   ,       RT0 RM4,    DEF      , COMBO_TERM_SLOW)
+ZMK_COMBO(lbrack,   &lbrack_rbrack,      RT1 RM4,    DEF      , COMBO_TERM_SLOW)
+ZMK_COMBO(lcurl ,   &lcurl_rcurl ,       RT2 RM4,    DEF      , COMBO_TERM_SLOW)
+ZMK_COMBO(lt    ,   &lt_gt       ,       RT3 RM4,    DEF      , COMBO_TERM_SLOW)
 ZMK_COMBO(esc   ,   HLC_ESC      ,       LM4 LM3,    DEF      , COMBO_TERM_FAST)
 
 // /* Horizontal combos - left hand */

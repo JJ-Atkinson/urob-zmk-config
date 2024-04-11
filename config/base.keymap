@@ -153,7 +153,7 @@ SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
 SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
 
 // tap: dot | shift + tap: colon | ctrl + shift + tap: >
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COMMA)
 SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
 
 // tap: qmark | shift + tap: excl
@@ -237,13 +237,16 @@ ZMK_LAYER(sys,
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
     X_LT     &bootloader   _BT_SEL_KEYS_                                             X_MT     &kp PG_UP     &kp C_VOL_DN  &kp UP        &kp C_VOL_UP  &bootloader     X_RT
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    X_LM     &hml LGUI TAB       
-                          &hml LALT NXT_TAB
+    X_LM     &hml LGUI TAB
+                          &hml LSHIFT NXT_TAB
                                          &hml LCTRL NXT_WIN
-                                                       &hml LSHFT ESC
-                                                                     ___             X_MM     &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT     &kp DEL         X_RM
+                                                       &hml LALT ESC
+                                                                     ___             X_MM     &kp PG_DN     &hmr LALT LEFT
+                                                                                                                          &hmr LCTRL DOWN 
+                                                                                                                                        &hmr RSHIFT RIGHT
+                                                                                                                                                     &hmr LGUI DEL    X_RM
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    X_LB     &sys_reset    &kp PRV_TAB   ___           ___           &to GAME_BASE   X_MB     &kp INS       &kp C_PP      &kp C_PREV    &kp C_FF      &sys_reset      X_RB
+    X_LB     &sys_reset    &kp PRV_TAB   ___           ___           &to GAME_BASE   X_MB     &kp INS       &kp C_PP      &kp C_PREV    &kp C_NEXT    &sys_reset      X_RB
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
     X_LH                                               ___           ___             X_MH     ___           CANCEL                                                    X_RH
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
@@ -253,7 +256,10 @@ ZMK_LAYER(sym,
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
     X_LT    ___           &kp F7        &kp F8        &kp F9        &kp F12          X_MT     &kp GRAVE     &kp AMPS      &kp STAR      &kp EQUAL     &kp SINGLE_QUOTE X_RT
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    X_LM    &sk LGUI      &hml LSHIFT F4 &hml LCTRL F5 &hml LALT F6 &sk F11          X_MM     &kp PIPE2     &kp DOLLAR    &kp PERCENT   &kp CARET     &kp MINUS       X_RM
+    X_LM    &sk LGUI      &hml LSHIFT F4 &hml LCTRL F5 &hml LALT F6 &sk F11          X_MM     &kp PIPE2    &hmr LALT DOLLAR
+                                                                                                                         &hmr LCTRL PERCENT 
+                                                                                                                                       &hmr RSHIFT CARET
+                                                                                                                                                     &hmr LGUI MINUS  X_RM
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
     X_LB    ___           &kp F1        &kp F2        &kp F3        &kp F10          X_MB     ___           &kp EXCL      &kp AT_SIGN   &kp HASH      &slash_morph    X_RB
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
